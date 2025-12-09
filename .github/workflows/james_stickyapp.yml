@@ -78,7 +78,9 @@ jobs:
         with:
           app-name: 'stickyapp'
           slot-name: 'Production'
+          multicontainer_config_file: "docker-compose.yml"
 
           
+
 
 
