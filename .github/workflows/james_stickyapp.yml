@@ -23,11 +23,7 @@ jobs:
       - name: Build frontend (nginx) image
         run: docker build -t thetygerpotatto/database:latest ./database
 
-      - name: Push images
-        run: |
-          docker push thetygerpotatto/backend:latest
-          docker push thetygerpotatto/frontend:latest
-          docker push thetygerpotatto/database:latest
+
 
 
   deploy:
@@ -54,3 +50,4 @@ jobs:
           app-name: 'stickyapp'
           slot-name: 'Production'
           multicontainer_config_file: "docker-compose.yml"
+
