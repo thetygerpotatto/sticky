@@ -40,9 +40,9 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_81B2E37FBCD641D0B64710D86D404CE4 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B4FFA0067EDE4D18BF9026D24D013299 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F49FCB12FE274161A432E1EDA33E694A }}
 
       - name: Deploy to Azure Web App (Docker Compose)
         uses: azure/webapps-deploy@v3
@@ -50,4 +50,5 @@ jobs:
           app-name: 'stickyapp'
           slot-name: 'Production'
           multicontainer_config_file: "docker-compose.yml"
+
 
