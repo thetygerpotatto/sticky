@@ -69,8 +69,8 @@ jobs:
       - name: Docker Compose Build
         run: docker compose build
 
-      - name: Docker Compose Push
-        run: docker compose push
+      - name: Docker Compose Up
+        run: docker compose up
         
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
@@ -80,3 +80,4 @@ jobs:
           slot-name: 'Production'
 
           
+
