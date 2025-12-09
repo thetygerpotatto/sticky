@@ -66,11 +66,17 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_81B2E37FBCD641D0B64710D86D404CE4 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B4FFA0067EDE4D18BF9026D24D013299 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F49FCB12FE274161A432E1EDA33E694A }}
+      - name: Docker Compose Build
+        run: docker compose build
 
+      - name: Docker Compose Push
+        run: docker compose push
+        
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'stickyapp'
           slot-name: 'Production'
+
           
